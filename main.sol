@@ -90,3 +90,95 @@ contract YFTdev {
     mapping(address => uint64) private _rlBucket;
     mapping(address => uint32) private _rlCount;
     mapping(uint256 => bool) public nonceSpent;
+
+    uint256 private locked; // reentrancy mutex (1 = in-flight)
+
+    modifier onlyOwner() {
+        if (msg.sender != OWNER) revert YFTCLAW__NotOwner();
+        _;
+    }
+
+    modifier onlySteward() {
+        if (msg.sender != STEWARD) revert YFTCLAW__NotSteward();
+        _;
+    }
+
+    modifier onlyNotary() {
+        if (msg.sender != NOTARY) revert YFTCLAW__NotNotary();
+        _;
+    }
+
+    modifier onlyWatchdog() {
+        if (msg.sender != WATCHDOG) revert YFTCLAW__NotWatchdog();
+        _;
+    }
+
+    modifier whenNotPaused() {
+        if (paused) revert YFTCLAW__HullFrozen();
+        _;
+    }
+
+    modifier nonReentrant() {
+        if (locked != 0) revert YFTCLAW__BadScratch();
+        locked = 1;
+        _;
+        locked = 0;
+    }
+
+    constructor(address owner_, address steward_, address notary_, address watchdog_) {
+        if (owner_ == address(0) || steward_ == address(0) || notary_ == address(0) || watchdog_ == address(0))
+            revert YFTCLAW__ZeroProbe();
+        OWNER = owner_;
+        STEWARD = steward_;
+        NOTARY = notary_;
+        WATCHDOG = watchdog_;
+        GENESIS_TS = uint64(block.timestamp);
+        CLAW_SEED = uint256(keccak256(abi.encode(_CLAW_SALT_A, _CLAW_SALT_B, block.prevrandao, owner_)));
+        hullDelaySeconds = 628355; // randomized default delay window
+        rlWindow = 3720;
+        rlMaxHits = 205;
+    }
+
+    receive() external payable {
+        revert YFTCLAW__EtherRejected();
+    }
+
+    fallback() external payable {
+        revert YFTCLAW__EtherRejected();
+    }
+
+    function setPaused(bool on) external onlyOwner {
+        paused = on;
+        emit ClawPause(on);
+    }
+
+    function tuneRatelimit(uint32 window, uint32 maxHits) external onlyOwner {
+        if (window < 30 || maxHits == 0) revert YFTCLAW__BadEpoch();
+        rlWindow = window;
+        rlMaxHits = maxHits;
+        emit ClawRatelimitTuned(window, maxHits);
+    }
+
+    function setMerkleRoot(bytes32 root) external onlySteward whenNotPaused {
+        merkleRoot = root;
+        merkleVersion += 1;
+        emit ClawMerkleRoot(root, uint64(block.timestamp));
+    }
+
+    function queueHull(bytes32 opTag, uint256 payload) external onlyOwner {
+        uint64 eta = uint64(block.timestamp) + hullDelaySeconds;
+        hullOp = HullOp({opTag: opTag, eta: eta, pending: true, payload: payload});
+        emit ClawHullQueued(opTag, eta, payload);
+    }
+
+    function applyHull() external onlyOwner {
+        HullOp memory h = hullOp;
+        if (!h.pending) revert YFTCLAW__UnknownHullOp();
+        if (block.timestamp < h.eta) revert YFTCLAW__DelayNotMet();
+        if (h.opTag == keccak256(abi.encode(DOMAIN_VOUCH, bytes32(uint256(1))))) {
+            hullDelaySeconds = uint64(h.payload);
+        } else if (h.opTag == keccak256(abi.encode(DOMAIN_VOUCH, bytes32(uint256(2))))) {
+            // payload interpreted as uint32 pair packed: high=window low=maxHits
+            uint32 w = uint32(h.payload >> 224);
+            uint32 m = uint32(h.payload);
+            rlWindow = w == 0 ? rlWindow : w;
