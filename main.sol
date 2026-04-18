@@ -366,3 +366,95 @@ contract YFTdev {
             y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(14))));
         }
     }
+
+    function _clawProbe_15(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 2) ^ (x << 1);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(15))));
+        }
+    }
+
+    function _clawProbe_16(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 3) ^ (x << 2);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(16))));
+        }
+    }
+
+    function _clawProbe_17(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 4) ^ (x << 3);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(17))));
+        }
+    }
+
+    function _clawProbe_18(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 5) ^ (x << 4);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(18))));
+        }
+    }
+
+    function _clawProbe_19(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 6) ^ (x << 5);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(19))));
+        }
+    }
+
+    function _clawProbe_20(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 7) ^ (x << 6);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(20))));
+        }
+    }
+
+    function _clawProbe_21(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 8) ^ (x << 0);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(21))));
+        }
+    }
+
+    function _clawProbe_22(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 9) ^ (x << 1);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(22))));
+        }
+    }
+
+    function _clawProbe_23(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 10) ^ (x << 2);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(23))));
+        }
+    }
+
+    function _clawProbe_24(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 11) ^ (x << 3);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(24))));
+        }
+    }
+
+    function _clawProbe_25(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 12) ^ (x << 4);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(25))));
+        }
+    }
+
+    function _clawProbe_26(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 0) ^ (x << 5);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(26))));
+        }
+    }
+
+    function _clawProbe_27(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 1) ^ (x << 6);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(27))));
+        }
+    }
+
