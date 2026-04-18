@@ -918,3 +918,95 @@ contract YFTdev {
             y = (x >> 2) ^ (x << 2);
             y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(93))));
         }
+    }
+
+    function _clawProbe_94(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 3) ^ (x << 3);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(94))));
+        }
+    }
+
+    function _clawProbe_95(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 4) ^ (x << 4);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(95))));
+        }
+    }
+
+    function _clawProbe_96(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 5) ^ (x << 5);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(96))));
+        }
+    }
+
+    function _clawProbe_97(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 6) ^ (x << 6);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(97))));
+        }
+    }
+
+    function clawPureMixer_0(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_0(a ^ b);
+    }
+
+    function clawPureMixer_1(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_1(a ^ b);
+    }
+
+    function clawPureMixer_2(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_2(a ^ b);
+    }
+
+    function clawPureMixer_3(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_3(a ^ b);
+    }
+
+    function clawPureMixer_4(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_4(a ^ b);
+    }
+
+    function clawPureMixer_5(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_5(a ^ b);
+    }
+
+    function clawPureMixer_6(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_6(a ^ b);
+    }
+
+    function clawPureMixer_7(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_7(a ^ b);
+    }
+
+    function clawPureMixer_8(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_8(a ^ b);
+    }
+
+    function clawPureMixer_9(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_9(a ^ b);
+    }
+
+    function clawPureMixer_10(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_10(a ^ b);
+    }
+
+    function clawPureMixer_11(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_11(a ^ b);
+    }
+
+    function clawPureMixer_12(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_12(a ^ b);
+    }
+
+    function clawPureMixer_13(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_13(a ^ b);
+    }
+
+    function clawPureMixer_14(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_14(a ^ b);
+    }
+
+    function clawPureMixer_15(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_15(a ^ b);
