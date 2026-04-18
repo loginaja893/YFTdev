@@ -182,3 +182,95 @@ contract YFTdev {
             uint32 w = uint32(h.payload >> 224);
             uint32 m = uint32(h.payload);
             rlWindow = w == 0 ? rlWindow : w;
+            rlMaxHits = m == 0 ? rlMaxHits : m;
+        } else {
+            revert YFTCLAW__UnknownHullOp();
+        }
+        hullOp.pending = false;
+        emit ClawHullApplied(h.opTag, uint64(block.timestamp));
+    }
+
+    function sealEnvelope(bytes32 envId, uint8 lane, bytes32 digest) external whenNotPaused nonReentrant {
+        if (msg.sender == address(0)) revert YFTCLAW__VoidSender();
+        _enforceRl(msg.sender);
+        if (lane > 31) revert YFTCLAW__BadEnvelope();
+        Envelope storage e = envelopes[envId];
+        if (e.digest != bytes32(0)) revert YFTCLAW__BadEnvelope();
+        e.author = msg.sender;
+        e.lane = lane;
+        e.sealedAt = uint64(block.timestamp);
+        e.digest = digest;
+        emit ClawEnvelopeSealed(envId, lane, digest, msg.sender);
+    }
+
+    function notarize(bytes32 envId, bytes32 ink) external onlyNotary whenNotPaused {
+        Envelope storage e = envelopes[envId];
+        if (e.digest == bytes32(0)) revert YFTCLAW__BadEnvelope();
+        if (e.inked) revert YFTCLAW__BadEnvelope();
+        e.notaryInk = ink;
+        e.inked = true;
+        emit ClawNotaryInk(envId, ink, uint64(block.timestamp));
+    }
+
+    function commitScratch(bytes32 scratchId, bytes32 head, uint256 nonce) external whenNotPaused nonReentrant {
+        if (msg.sender == address(0)) revert YFTCLAW__VoidSender();
+        if (nonceSpent[nonce]) revert YFTCLAW__NonceSpent();
+        _enforceRl(msg.sender);
+        Scratch storage s = scratches[scratchId];
+        if (s.head != bytes32(0)) revert YFTCLAW__BadScratch();
+        s.author = msg.sender;
+        s.head = head;
+        s.committedAt = uint64(block.timestamp);
+        s.nonce = nonce;
+        nonceSpent[nonce] = true;
+        emit ClawScratchCommitted(scratchId, head, uint64(block.timestamp));
+    }
+
+    function _pairHash(bytes32 a, bytes32 b) private pure returns (bytes32) {
+        return a < b ? keccak256(abi.encodePacked(a, b)) : keccak256(abi.encodePacked(b, a));
+    }
+
+    function proveLeaf(bytes32 leaf, bytes32[] calldata proof) external view whenNotPaused returns (bool ok) {
+        bytes32 computed = leaf;
+        for (uint256 i = 0; i < proof.length; i++) {
+            computed = _pairHash(computed, proof[i]);
+        }
+        ok = (computed == merkleRoot);
+    }
+
+    function bark(uint256 code, bytes32 reason) external onlyWatchdog {
+        emit ClawWatchBark(code, reason);
+    }
+
+    function clawDigest(uint8 lane, bytes32 payload) external view returns (bytes32) {
+        return keccak256(abi.encode(DOMAIN_VOUCH, lane, payload, merkleVersion));
+    }
+
+    function scratchBind(bytes32 scratchId, address probe) external view returns (bytes32) {
+        return keccak256(abi.encode(DOMAIN_SCRATCH, scratchId, probe, CLAW_SEED));
+    }
+
+    function _enforceRl(address who) private {
+        uint64 bucket = uint64(block.timestamp / rlWindow);
+        if (_rlBucket[who] != bucket) {
+            _rlBucket[who] = bucket;
+            _rlCount[who] = 0;
+        }
+        if (_rlCount[who] >= rlMaxHits) revert YFTCLAW__Ratelimit();
+        unchecked {
+            _rlCount[who]++;
+        }
+    }
+
+    function _clawProbe_0(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 0) ^ (x << 0);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(0))));
+        }
+    }
+
+    function _clawProbe_1(uint256 x) private pure returns (uint256 y) {
+        unchecked {
+            y = (x >> 1) ^ (x << 1);
+            y ^= uint256(keccak256(abi.encodePacked(bytes32(y), uint256(1))));
+        }
