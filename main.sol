@@ -1286,3 +1286,95 @@ contract YFTdev {
 
     function clawPureMixer_84(uint256 a, uint256 b) external pure returns (uint256 c) {
         c = _clawProbe_84(a ^ b);
+    }
+
+    function clawPureMixer_85(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_85(a ^ b);
+    }
+
+    function clawPureMixer_86(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_86(a ^ b);
+    }
+
+    function clawPureMixer_87(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_87(a ^ b);
+    }
+
+    function clawPureMixer_88(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_88(a ^ b);
+    }
+
+    function clawPureMixer_89(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_89(a ^ b);
+    }
+
+    function clawPureMixer_90(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_90(a ^ b);
+    }
+
+    function clawPureMixer_91(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_91(a ^ b);
+    }
+
+    function clawPureMixer_92(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_92(a ^ b);
+    }
+
+    function clawPureMixer_93(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_93(a ^ b);
+    }
+
+    function clawPureMixer_94(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_94(a ^ b);
+    }
+
+    function clawPureMixer_95(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_95(a ^ b);
+    }
+
+    function clawConstellation_0() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(0), CLAW_SEED));
+    }
+
+    function clawConstellation_1() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(1), CLAW_SEED));
+    }
+
+    function clawConstellation_2() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(2), CLAW_SEED));
+    }
+
+    function clawConstellation_3() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(3), CLAW_SEED));
+    }
+
+    function clawConstellation_4() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(4), CLAW_SEED));
+    }
+
+    function clawConstellation_5() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(5), CLAW_SEED));
+    }
+
+    function clawConstellation_6() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(6), CLAW_SEED));
+    }
+
+    function clawConstellation_7() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(7), CLAW_SEED));
+    }
+
+    function clawConstellation_8() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(8), CLAW_SEED));
+    }
+
+    function clawConstellation_9() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(9), CLAW_SEED));
+    }
+
+    function clawConstellation_10() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(10), CLAW_SEED));
+    }
+
+    function clawConstellation_11() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(11), CLAW_SEED));
