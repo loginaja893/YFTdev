@@ -1102,3 +1102,95 @@ contract YFTdev {
 
     function clawPureMixer_38(uint256 a, uint256 b) external pure returns (uint256 c) {
         c = _clawProbe_38(a ^ b);
+    }
+
+    function clawPureMixer_39(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_39(a ^ b);
+    }
+
+    function clawPureMixer_40(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_40(a ^ b);
+    }
+
+    function clawPureMixer_41(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_41(a ^ b);
+    }
+
+    function clawPureMixer_42(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_42(a ^ b);
+    }
+
+    function clawPureMixer_43(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_43(a ^ b);
+    }
+
+    function clawPureMixer_44(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_44(a ^ b);
+    }
+
+    function clawPureMixer_45(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_45(a ^ b);
+    }
+
+    function clawPureMixer_46(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_46(a ^ b);
+    }
+
+    function clawPureMixer_47(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_47(a ^ b);
+    }
+
+    function clawPureMixer_48(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_48(a ^ b);
+    }
+
+    function clawPureMixer_49(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_49(a ^ b);
+    }
+
+    function clawPureMixer_50(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_50(a ^ b);
+    }
+
+    function clawPureMixer_51(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_51(a ^ b);
+    }
+
+    function clawPureMixer_52(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_52(a ^ b);
+    }
+
+    function clawPureMixer_53(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_53(a ^ b);
+    }
+
+    function clawPureMixer_54(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_54(a ^ b);
+    }
+
+    function clawPureMixer_55(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_55(a ^ b);
+    }
+
+    function clawPureMixer_56(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_56(a ^ b);
+    }
+
+    function clawPureMixer_57(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_57(a ^ b);
+    }
+
+    function clawPureMixer_58(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_58(a ^ b);
+    }
+
+    function clawPureMixer_59(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_59(a ^ b);
+    }
+
+    function clawPureMixer_60(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_60(a ^ b);
+    }
+
+    function clawPureMixer_61(uint256 a, uint256 b) external pure returns (uint256 c) {
+        c = _clawProbe_61(a ^ b);
