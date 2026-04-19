@@ -1562,3 +1562,88 @@ contract YFTdev {
 
     function clawConstellation_57() external view returns (bytes32) {
         return keccak256(abi.encode(msg.sender, merkleVersion, uint256(57), CLAW_SEED));
+    }
+
+    function clawConstellation_58() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(58), CLAW_SEED));
+    }
+
+    function clawConstellation_59() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(59), CLAW_SEED));
+    }
+
+    function clawConstellation_60() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(60), CLAW_SEED));
+    }
+
+    function clawConstellation_61() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(61), CLAW_SEED));
+    }
+
+    function clawConstellation_62() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(62), CLAW_SEED));
+    }
+
+    function clawConstellation_63() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(63), CLAW_SEED));
+    }
+
+    function clawConstellation_64() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(64), CLAW_SEED));
+    }
+
+    function clawConstellation_65() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(65), CLAW_SEED));
+    }
+
+    function clawConstellation_66() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(66), CLAW_SEED));
+    }
+
+    function clawConstellation_67() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(67), CLAW_SEED));
+    }
+
+    function clawConstellation_68() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(68), CLAW_SEED));
+    }
+
+    function clawConstellation_69() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(69), CLAW_SEED));
+    }
+
+    function clawConstellation_70() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(70), CLAW_SEED));
+    }
+
+    function clawConstellation_71() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(71), CLAW_SEED));
+    }
+
+    function clawConstellation_72() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(72), CLAW_SEED));
+    }
+
+    function clawConstellation_73() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(73), CLAW_SEED));
+    }
+
+    address public constant ANCHOR_ADDR_0 = 0x861992Bbb7fBc3cF3025c8E66F8974A0457212B3;
+    address public constant ANCHOR_ADDR_1 = 0xa77e800E5d620C3C08AfB3E89aD54dA4B2884eE0;
+    address public constant ANCHOR_ADDR_2 = 0xb215d581EFC34baA63960f845dD313BBC52B9948;
+    address public constant ANCHOR_ADDR_3 = 0xc97b8a67e4A46Dae564CE21268260FDC57461010;
+    address public constant ANCHOR_ADDR_4 = 0xBEfbE23F50C2F8Ced302F0b4cfe3aCb2A239EbF5;
+    address public constant ANCHOR_ADDR_5 = 0xa2054C23D9d18649466cF039E529cf9343074330;
+    address public constant ANCHOR_ADDR_6 = 0xFd849C34d81Dc3ab1b51Ec0102155c92343297AB;
+    address public constant ANCHOR_ADDR_7 = 0x7b7CE4154043382236B57F606115f1443e228869;
+
+    bytes32 public constant ANCHOR_HASH_0 = bytes32(0xd836478db7c488d78d5cd65b5007239954eaa5d3406bb679ff33140dff307e36);
+    bytes32 public constant ANCHOR_HASH_1 = bytes32(0x144e0f14bd527814ac4da57f12938eeaaa62cc59156afa4f1cd52ce67987b2a4);
+    bytes32 public constant ANCHOR_HASH_2 = bytes32(0x0cb85e23901089e9594cc3291c3e2bb2bcbcf141d83df6de80e65c5f9e3cd254);
+    bytes32 public constant ANCHOR_HASH_3 = bytes32(0x55739db9fa29cf250e335e4b9c3f871121132981da15ffee7b8c6dc086f8ccbc);
+    bytes32 public constant ANCHOR_HASH_4 = bytes32(0x94a0901dc315b42dc0510f7b33d9675d885b11ecbe6793fac682216570ed0750);
+    bytes32 public constant ANCHOR_HASH_5 = bytes32(0xda6393b7b359a74c13c81cc9b47eeac8d7cad27e9af7363f8550c500182a3004);
+    bytes32 public constant ANCHOR_HASH_6 = bytes32(0xbd4153687955f0c7e3bef46031a686f4cb8ea50df2510cbebe7007820add2747);
+    bytes32 public constant ANCHOR_HASH_7 = bytes32(0x4d1c942b0a8d173506ba61d5a2dbb2aaa7eade21a3fd6abd2e0c258bb8d57274);
+
+}
