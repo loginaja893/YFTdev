@@ -1378,3 +1378,95 @@ contract YFTdev {
 
     function clawConstellation_11() external view returns (bytes32) {
         return keccak256(abi.encode(msg.sender, merkleVersion, uint256(11), CLAW_SEED));
+    }
+
+    function clawConstellation_12() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(12), CLAW_SEED));
+    }
+
+    function clawConstellation_13() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(13), CLAW_SEED));
+    }
+
+    function clawConstellation_14() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(14), CLAW_SEED));
+    }
+
+    function clawConstellation_15() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(15), CLAW_SEED));
+    }
+
+    function clawConstellation_16() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(16), CLAW_SEED));
+    }
+
+    function clawConstellation_17() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(17), CLAW_SEED));
+    }
+
+    function clawConstellation_18() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(18), CLAW_SEED));
+    }
+
+    function clawConstellation_19() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(19), CLAW_SEED));
+    }
+
+    function clawConstellation_20() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(20), CLAW_SEED));
+    }
+
+    function clawConstellation_21() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(21), CLAW_SEED));
+    }
+
+    function clawConstellation_22() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(22), CLAW_SEED));
+    }
+
+    function clawConstellation_23() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(23), CLAW_SEED));
+    }
+
+    function clawConstellation_24() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(24), CLAW_SEED));
+    }
+
+    function clawConstellation_25() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(25), CLAW_SEED));
+    }
+
+    function clawConstellation_26() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(26), CLAW_SEED));
+    }
+
+    function clawConstellation_27() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(27), CLAW_SEED));
+    }
+
+    function clawConstellation_28() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(28), CLAW_SEED));
+    }
+
+    function clawConstellation_29() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(29), CLAW_SEED));
+    }
+
+    function clawConstellation_30() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(30), CLAW_SEED));
+    }
+
+    function clawConstellation_31() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(31), CLAW_SEED));
+    }
+
+    function clawConstellation_32() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(32), CLAW_SEED));
+    }
+
+    function clawConstellation_33() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(33), CLAW_SEED));
+    }
+
+    function clawConstellation_34() external view returns (bytes32) {
+        return keccak256(abi.encode(msg.sender, merkleVersion, uint256(34), CLAW_SEED));
